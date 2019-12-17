@@ -1,0 +1,52 @@
+<h3>Edit this pet</h3>
+<form class="form-horizontal" (submit)="updatingPet(onePet._id)">
+        <div class="form-group">
+            <label class="control-label col-sm-6">Pet Name:</label>
+            <div class="col-sm-6">
+                <input type="text" name="onePet.name" [(ngModel)]="onePet.name" />
+                <span *ngIf="error2s.name">{{ error2s.name.message }}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-6">Pet Type:</label>
+            <div class="col-sm-6">
+                <input type="text" name="onePet.type" [(ngModel)]="onePet.type" />
+                <span *ngIf="error2s.type">{{ error2s.type.message }}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-6">Description</label>
+            <div class="col-sm-6">
+                <input type="text" name="onePet.description" [(ngModel)]="onePet.description" />
+                <span *ngIf="error2s.description">{{ error2s.description.message }}</span>
+            </div>
+        </div>
+        <h3>Skills<span style="color: gray;">(optional)</span>:</h3>
+        <div class="form-group">
+            <label class="control-label col-sm-6">Skill 1: </label>
+            <div class="col-sm-6">
+                <input type="text" name="onePet.skill1" [(ngModel)]="onePet.skill1" />
+                <span *ngIf="error2s.skill1">{{ error2s.skill1.message }}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-6">Skill 2: </label>
+            <div class="col-sm-6">
+                <input type="text" name="onePet.skill2" [(ngModel)]="onePet.skill2" />
+                <span *ngIf="error2s.skill2">{{ error2s.skill2.message }}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-6">Skill 3: </label>
+            <div class="col-sm-6" >
+                <input type="text" name="onePet.skill3" [(ngModel)]="onePet.skill3" />
+                <span *ngIf="error2s.skill3">{{ error2s.skill3.message }}</span>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-info" value="Edit pet">
+    </form>
+    
+    <!-- <a [routerLink]="['/pets', onePet._id]" class="btn btn-info" role="button">Cancel</a> -->
+    <!-- <a [routerLink]="['/']" class="btn btn-info" role="button">Cancel</a> -->
+    <button type="button" [routerLink]="['/pets', onePet._id]" (click)="cancelEdit(onePet._id)">Cancel</button>
+

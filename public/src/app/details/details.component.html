@@ -1,0 +1,21 @@
+<fieldset>
+    <legend>
+        <h3>Details about {{ onePet.name }}</h3>
+        <a [routerLink]="['/']" class="btn btn-info" role="button">Home</a>
+
+    </legend>
+    <p><span>Pet type:     </span>{{ onePet.type }}</p>
+    <p><span>Description:  </span>{{ onePet.description }}</p>
+    <p><span>Skills:</span></p>
+        <ul>
+            <li>{{onePet.skill1}}</li>
+            <li>{{onePet.skill2}}</li>
+            <li>{{onePet.skill3}}</li>
+        </ul>    
+    <p><span>Likes:        </span> {{onePet.likes}}</p>
+    
+</fieldset>
+
+<button [disabled]="isLike" type="button" [routerLink]="['/pets', onePet._id]" (click)="likesPet(onePet._id)">Like this pet</button>
+<button class="btn btn-success" type="button" (click)="adoptPet(onePet._id)">Adopt a Pet!</button>
+
